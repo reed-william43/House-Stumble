@@ -1,0 +1,792 @@
+%House Stumble GAME FILE
+
+<game>
+	<ptype>BasicB</ptype>	
+	
+		
+% Area 1
+	<area>
+		<basement>
+			<desc>Basement Landing. There appears to be stairs leading up just ahead with doors in all other directions.</desc>
+			<feats>0,0</feats>
+		</basement>
+	</area>
+	<item>
+		<basic>
+			<name>Bloody Note</name>
+			<desc>This is a note that has blood smeared on it.  The note reads: "I am sure you are confused but I do not care. Get three omens and make it to the front door and I may let you out or leave you to die, I have not decided yet. And as of now the house has sensed you and will be trying to kill you, but do be sure to make it at least entertaining for us. -"</desc>
+			<star>1</star>
+		</basic>
+	</item>
+    	<item>
+    		<use>
+			<name>Big Red Button</name>
+			<desc>It is a radio device with a big red button on it.</desc>
+			<star>1</star>
+			<actmess>You press the button and the doors all around you snap unlocked</actmess>
+			<actar>1</actar>
+			<rule>1,u,2</rule>
+			<rule>1,d,-1</rule>
+			<rule>1,l,-1</rule>
+			<rule>1,r,-1</rule>
+		</use>
+	</item>
+% Area 2
+	<area>
+		<stairs>
+			<desc>The stairs to and from Basement.</desc>
+			<feats>0,0</feats>
+		</stairs>
+	</area>
+% Area 3
+	<area>
+		<ground>
+			<desc>The Foyer. The Entrance Hall is to your left, a door in front of you, and a set of stairs to your right.</desc>
+			<feats>0,0</feats>
+		</ground>
+	</area>
+% Area 4
+	<area>
+		<ground>
+			<desc>The Entrance Hall. There is a barred front door to your left and The Foyer to your right, with doors in front of and behind you.</desc>
+			<feats>0,0</feats>
+		</ground>
+	</area>
+% Area 5
+	<area>
+		<stairs>
+			<desc>Grand Staircase</desc>
+			<feats>0,0</feats>
+		</stairs>
+	</area>
+% Area 6
+	<area>
+		<upper>
+			<desc>Upper Landing</desc>
+			<feats>0,0</feats>
+		</upper>
+	</area>
+% Area 7
+	<area>
+		<ground>
+			<desc>You made it outside, and to the end of your troubles...Hopefully.</desc>
+			<feats>0,1</feats>
+		</ground>
+	</area>
+%BEGIN THE RANDOM BASEMENT ROOMS********************************
+% Area 8
+	<area>
+		<basementR>
+			<desc>Furnace Room</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>0,m,1</Dmg>
+				<rmMess>You enter the door a little too fast only to realize you are in a furnace room, the flames damage your strength. Although through the pain you notice a skull with an ominous aura in the middle of the room.</rmMess>
+			</rmDmg>
+		</basementR>
+	</area>
+	<item>
+		<omen>
+			<name>The Skull</name>
+			<desc>It is a Human Skull with a gold tooth, and a raven seems to be carved on its head.</desc>
+			<star>8</star>
+		</omen>
+	</item>
+% Area 9
+	<area>
+		<basementR>
+			<desc>Pentagram Chamber</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>0,s,1</Dmg>
+				<rmMess>There is a large pentagram on the ground with a glowing red rock in the middle. You get heebie jeebies and lose a little sanity.</rmMess>
+			</rmDmg>
+		</basementR>
+	</area>
+	<item>
+		<omen>
+			<name>Bloodstone</name>
+			<desc>This deep crimson stone is icy to the touch and appears to be filled with blood. There is a raven in flight carved on its base.</desc>
+			<star>9</star>
+		</omen>
+	</item>
+% Area 10
+	<area>
+		<basementR>
+			<desc>The Catacombs</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>0,a,1</Dmg>
+				<rmMess>You enter the Catacombs and become lost. You frantically run here and there trying to escape. You are severely winded and your agility decreases, at least you know your way through now.</rmMess>
+			</rmDmg>
+		</basementR>
+	</area>
+% Area 11
+	<area>
+		<basementR>
+			<desc>Storm Cellar</desc>
+			<feats>0,0</feats>
+		</basementR>
+	</area>
+	<item>
+		<interact>
+			<name>Candle</name>
+			<desc>It makes the shadows move...at least you hope it is doing that.</desc>
+			<star>11</star>
+			<actmess>The little light soothes you and calms your nerves, gain sanity.</actmess>
+			<useCnt>1</useCnt>
+			<actar>0</actar>
+			<effect>s,1,1</effect>
+		</interact>
+	</item>
+	
+
+% Area 12
+	<area>
+		<basementR>
+			<desc>Wine Cellar</desc>
+			<feats>0,0</feats>
+		</basementR>
+	</area>
+	<item>
+		<consume>
+			<name>Bottle</name>
+			<desc>An opaque bottle containing a black liquid. You can probably get a good three sips from it.</desc>
+			<star>12</star>
+			<actmess>You pinch your nose and drink from the bottle, I mean if you are gonna die, might as well live life with a bit of risk. The liquid seems to help as you feel stronger.</actmess>
+			<actar>0</actar>
+			<useCnt>3</useCnt>
+			<effect>m,1,1</effect>
+		</consume>
+	</item>
+% Area 13
+	<area>
+		<basementR>
+			<desc>Panic Room</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>Casually, you reach up to brush aside some webs... but they will not brush away...</rmMess>
+				<act>1</act>
+				<#d>m</#d>
+				<hRoll>5,1,m,1</hRoll>
+					<hMsg>You break free after a second, gains are life.</hMsg>
+				<mRoll>4,1,m,0</mRoll>
+					<mMsg>You struggle for a minute or two but emerge unscathed.</mMsg>
+				<lRoll>3,0,m,1</lRoll>
+					<lMsg>You struggle for an hour or so before breaking free, the exhaustion is palpable. Lose Might</lMsg>
+			</rmEft>
+		</basementR>
+	</area>
+% Area 14
+	<area>
+		<basementR>
+			<desc>Store Room</desc>
+			<feats>0,0</feats>
+		</basementR>
+	</area>
+	<item>
+		<interact>
+			<name>Puzzle Box</name>
+			<desc>A small wooden puzzle box, you see how to open it.</desc>
+			<star>14</star>
+			<actmess>You puzzle out how to open the box and inside is a note that reads: "I put an item, pitfall or omen in just about every room, There are two omens per floor -L"</actmess>
+			<useCnt>1</useCnt>
+			<actar>0</actar>
+			<effect>k,1,2</effect>
+		</interact>
+	</item>
+% Area 15
+	<area>
+		<basementR>
+			<desc>Larder</desc>
+			<feats>0,0</feats>
+		</basementR>
+	</area>
+	<item>
+		<consume>
+			<name>Smelling Salts</name>
+			<desc>Wether it is booger sugar or cyanide, you can not tell.</desc>
+			<star>15</star>
+			<actmess>Who knows if it is booger sugar or cyanide, only a long sniff can tell. And after your nose is well acquainted with it, you feel utterly unstoppable. You can see sounds and hear colors.</actmess>
+			<actar>0</actar>
+			<useCnt>1</useCnt>
+			<effect>a,1,1</effect>
+			<effect>m,1,1</effect>
+			<effect>s,1,1</effect>
+			<effect>k,1,1</effect>
+		</consume>
+	</item>
+% Area 16
+	<area>
+		<basementR>
+			<desc>Cave</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>0,m,2</Dmg>
+				<rmMess>$&#*! You feel a small body under your foot, it slashes you and runs away giggling. Take two might damage</rmMess>
+			</rmDmg>
+		</basementR>
+	</area>
+% Area 17
+	<area>
+		<basementR>
+			<desc>Junk Room</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>Plaster falls from the walls and ceiling, if your fast you can avoid it.</rmMess>
+				<act>1</act>
+				<#d>a</#d>
+				<hRoll>4,1,a,1</hRoll>
+					<hMsg>Your reaction time is fast, you gain agility.</hMsg>
+				<mRoll>2,0,a,1</mRoll>
+					<mMsg>Your reaction time is decent, some plaster still hits you and slows your agility.</mMsg>
+				<lRoll>1,0,m,2</lRoll>
+					<lMsg>Slow and steady does not apply here. You are hit very hard and lose 2 might.</lMsg>
+			</rmEft>
+		</basementR>
+	</area>
+% Area 18
+	<area>
+		<basementR>
+			<desc>Dungeon</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>An angry being emerges from the wall and charges for you...</rmMess>
+				<act>1</act>
+				<#d>a</#d>
+				<hRoll>5,1,a,1</hRoll>
+					<hMsg>You dodge the attack and he vanishes</hMsg>
+				<mRoll>2,0,k,1</mRoll>
+					<mMsg>The being hits you on the side of the head and vanishes, it does not wound you visibly but it concusses you.</mMsg>
+				<lRoll>1,0,a,2</lRoll>
+					<lMsg>The being stabs the side of your leg and vanishes, your agility takes two damage.</lMsg>
+			</rmEft>
+		</basementR>
+	</area>
+% Area 19
+	<area>
+		<basementR>
+			<desc>The Crypt</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>You see an open coffin, you are inside of it...</rmMess>
+				<act>1</act>
+				<#d>s</#d>
+				<hRoll>4,1,s,1</hRoll>
+					<hMsg>You blink and it is gone, just your imagination, gain sanity.</hMsg>
+				<mRoll>2,0,s,1</mRoll>
+					<mMsg>The vision disturbs you, lose sanity.</mMsg>
+				<lRoll>1,0,s,2</lRoll>
+					<lMsg>You really are in the coffin, you awake and go a little mad.</lMsg>
+			</rmEft>
+		</basementR>
+	</area>
+% Area 20
+	<area>
+		<basementR>
+			<desc>Bridge Across The Chasm</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>A spider the size of a fist lands on your shoulder...it crawls into your hair...</rmMess>
+				<act>1</act>
+				<#d>s</#d>
+				<hRoll>4,1,a,1</hRoll>
+					<hMsg>You smack the spider off of your head and into the chasm, your reflexes are shap, gain agility.</hMsg>
+				<mRoll>1,0,a,1</mRoll>
+					<mMsg>The spider poisons you and your movements are slowed as you feel feverish.</mMsg>
+				<lRoll>0,0,m,1</lRoll>
+					<lMsg>The spider takes a chunk out of you and your might decreases.</lMsg>
+			</rmEft>
+		</basementR>
+	</area>
+%BEGIN THE RANDOM GROUND ROOMS**********************************
+% Area 21
+	<area>
+		<groundR>
+			<desc>Library</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>1,k,1</Dmg>
+				<rmMess>You browse through the Library, and find that there is a crystal ball with a seemingly live raven flying around in it.</rmMess>
+			</rmDmg>
+
+		</groundR>
+	</area>
+	<item>
+		<omen>
+			<name>Crystal Ball</name>
+			<desc>Hazy images swim in and out of focus but there is one that is constant, a tiny raven flying all through the Ball.</desc>
+			<star>21</star>
+		</omen>
+	</item>
+% Area 22
+	<area>
+		<groundR>
+			<desc>Hunters Trophy Room</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>1,m,1</Dmg>
+				<rmMess>This trophy room has many interesting things but an odd looking spear catches your eye.</rmMess>
+			</rmDmg>
+		</groundR>
+	</area>
+	<item>
+		<omen>
+			<name>Ashandarei</name>
+			<desc>Pronounced "ah-shahn-dah-rye" this weapon appears to be a quarterstaff, with a single-edge, short-sword blade on one end. The blade has a raven with wings outstretched on each side.</desc>
+			<star>22</star>
+		</omen>
+	</item>
+% Area 23
+	<area>
+		<groundR>
+			<desc>Dining Room</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>1,a,1</Dmg>
+				<rmMess>There is warm food on the table, and you know what they say, there is the quick and there is the hungry.</rmMess>
+			</rmDmg>
+		</groundR>
+	</area>
+% Area 24
+	<area>
+		<groundR>
+			<desc>Abandoned Room</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>1,k,0</Dmg>
+				<rmMess>Just a plain empty room...You hope.</rmMess>
+			</rmDmg>
+		</groundR>
+	</area>
+% Area 25
+	<area>
+		<groundR>
+			<desc>Sewing Room</desc>
+			<feats>0,0</feats>
+		</groundR>
+	</area>
+	<item>
+		<interact>
+			<name>Effigy</name>
+			<desc>Upon closer inspection the doll looks eerily like you, and there seems to be a knife in its back...</desc>
+			<star>25</star>
+			<actmess>You gain a preminition of death.</actmess>
+			<useCnt>1</useCnt>
+			<actar>0</actar>
+			<effect>k,1,1</effect>
+		</interact>
+	</item>
+% Area 26
+	<area>
+		<groundR>
+			<desc>Kitchen</desc>
+			<feats>0,0</feats>
+		</groundR>
+	</area>
+	<item>
+		<consume>
+			<name>Good Soup</name>
+			<desc>It looks like good soup.</desc>
+			<star>26</star>
+			<actmess>That is some good soup.</actmess>
+			<actar>0</actar>
+			<useCnt>2</useCnt>
+			<effect>a,1,2</effect>
+		</consume>
+	</item>
+% Area 27
+	<area>
+		<groundR>
+			<desc>Bloody Room</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>A cultist stands in the middle of a blood soaked room. He is carrying a dagger that has the appearance of twisted iron and is covered in strange symbols.</rmMess>
+				<act>1</act>
+				<#d>m</#d>
+				<hRoll>6,1,k,1</hRoll>
+					<hMsg>The knife seems oddly familiar as you stab the cultist with it.</hMsg>
+				<mRoll>4,0,m,0</mRoll>
+					<mMsg>You hold off the cultist long enough and he flees.</mMsg>
+				<lRoll>0,0,m,1</lRoll>
+					<lMsg>the attacker spills your blood, lose might.</lMsg>
+			</rmEft>
+		</groundR>
+	</area>
+% Area 28
+	<area>
+		<groundR>
+			<desc>Organ Room</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>A hideous shriek. It starts like a whisper, but ends in a soul rending shreik.</rmMess>
+				<act>1</act>
+				<#d>s</#d>
+				<hRoll>4,1,s,0</hRoll>
+					<hMsg>You resist the sound.</hMsg>
+				<mRoll>1,0,s,1</mRoll>
+					<mMsg>The screech makes you brain vibrate, you go a little insane.</mMsg>
+				<lRoll>0,0,s,2</lRoll>
+					<lMsg>The screech brings you to your knees and bursts your eardrums, you begin to go insane.</lMsg>
+			</rmEft>
+		</groundR>
+	</area>
+% Area 29
+	<area>
+		<groundR>
+			<desc>Bathroom</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>A thousand bugs rush out of the shower drain and cover you in a torrent of legs, wings and mandibles.</rmMess>
+				<act>1</act>
+				<#d>s</#d>
+				<hRoll>5,1,s,1</hRoll>
+					<hMsg>You blink and the bugs are gone, just your imagination, gain sanity.</hMsg>
+				<mRoll>2,0,s,1</mRoll>
+					<mMsg>You fall over and try to keep the bugs out of your mouth until you hit your head on a cabinet handle and the bugs vanish. Lose Sanity.</mMsg>
+				<lRoll>0,1,s,2</lRoll>
+					<lMsg>You fall over and try to keep the bugs out of your mouth and eyes, they burrow in anyway. As you scream and scratch at your face, they dissapear. You lose your mind a little.</lMsg>
+			</rmEft>
+		</groundR>
+	</area>
+% Area 30
+	<area>
+		<groundR>
+			<desc>Gardens</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>0,m,1</Dmg>
+				<rmMess>You step into an beautiful eclosed garden and proceed to step on a rake. It smacks you in the face.</rmMess>
+			</rmDmg>
+		</groundR>
+	</area>
+% Area 31
+	<area>
+		<groundR>
+			<desc>Graveyard</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>0,s,1</Dmg>
+				<rmMess>You step into the graveyard and the upheaved dirt grabs your legs and pulls you under. The dirt gets into your mouth as it attempts to pull you under, you escape by the skin of your teeth.</rmMess>
+			</rmDmg>
+		</groundR>
+	</area>
+% Area 32
+	<area>
+		<groundR>
+			<desc>Chapel</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>1,s,2</Dmg>
+				<rmMess>This room feel very calming.</rmMess>
+			</rmDmg>
+		</groundR>
+	</area>
+
+%BEGIN THE RANDOM UPPER ROOMS***********************************
+% Area 33
+	<area>
+		<upperR>
+			<desc>Rookery</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>1,k,0</Dmg>
+				<rmMess>You enter a room filled with bird cages, in the center of the room is a pedastal with a bird statue.</rmMess>
+			</rmDmg>
+		</upperR>
+	</area>
+	<item>
+		<omen>
+			<name>Silver Raven</name>
+			<desc>It is a silver raven with ruby eyes.</desc>
+			<star>33</star>
+		</omen>
+	</item>
+% Area 34
+	<area>
+		<upperR>
+			<desc>Vault Room</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>1,k,0</Dmg>
+				<rmMess>You enter the vault room and realize the vault door is open and in the middle of the vault on a pedastal is an ebony ring.</rmMess>
+			</rmDmg>
+		</upperR>
+	</area>
+	<item>
+		<omen>
+			<name>The Ring</name>
+			<desc>It is an ebony ring with a teadrop shape with a silver fox startling two ravens into flight carved into it.</desc>
+			<star>34</star>
+		</omen>
+	</item>
+% Area 35
+	<area>
+		<upperR>
+			<desc>Dusty Hallway</desc>
+			<feats>0,0</feats>
+		</upperR>
+	</area>
+% Area 36
+	<area>
+		<upperR>
+			<desc>Creaky Hallway</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>1,k,0</Dmg>
+				<rmMess>A horrifying message on the wall reads, "ERROR SEGMENTATION FAULT - CORE DUMPED".</rmMess>
+			</rmDmg>
+		</upperR>
+	</area>
+% Area 37
+	<area>
+		<upperR>
+			<desc>Operating Labratory</desc>
+			<feats>0,0</feats>
+		</upperR>
+	</area>
+	<item>
+		<interact>
+			<name>Medical Kit</name>
+			<desc>A kit to heal physical wounds</desc>
+			<star>37</star>
+			<actmess>Your wounds are bandaged.</actmess>
+			<useCnt>3</useCnt>
+			<actar>0</actar>
+			<effect>m,1,1</effect>
+			<effect>a,1,1</effect>
+		</interact>
+	</item>
+% Area 38
+	<area>
+		<upperR>
+			<desc>Study</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>1,k,1</Dmg>
+				<rmMess>There are many intersting documents and a funny rock in this room.</rmMess>
+			</rmDmg>
+		</upperR>
+	</area>
+	<item>
+		<interact>
+			<name>Lucky Stone</name>
+			<desc>You rub the stone and feel the good vibes.This boosts your sanity and knowledge</desc>
+			<star>38</star>
+			<actmess>You rub the stone and it boosts your sanity and knowledge.</actmess>
+			<useCnt>2</useCnt>
+			<actar>0</actar>
+			<effect>s,1,1</effect>
+			<effect>k,1,1</effect>
+		</interact>
+	</item>
+% Area 39
+	<area>
+		<upperR>
+			<desc>Master Bedroom</desc>
+			<feats>0,0</feats>
+		</upperR>
+	</area>
+	<item>
+		<interact>
+			<name>Camcorder</name>
+			<desc>It is a standard camcorder...You do not know if you should look at the contents...</desc>
+			<star>39</star>
+			<actmess>The horrific things you have seen scar you for life.</actmess>
+			<useCnt>7</useCnt>
+			<actar>0</actar>
+			<effect>s,0,1</effect>
+		</interact>
+	</item>
+% Area 40
+	<area>
+		<upperR>
+			<desc>Bedroom</desc>
+			<feats>0,0</feats>
+		</upperR>
+	</area>
+	<item>
+		<interact>
+			<name>Music Box</name>
+			<desc>A hand crafted antique music box.</desc>
+			<star>40</star>
+			<actmess>It plays a creepy melody that does not turn off.</actmess>
+			<useCnt>1</useCnt>
+			<actar>0</actar>
+			<effect>s,0,1</effect>
+		</interact>
+	</item>
+% Area 41
+	<area>
+		<upperR>
+			<desc>Research Labratory</desc>
+			<feats>0,0</feats>
+		</upperR>
+	</area>
+	<item>
+		<interact>
+			<name>Adrenaline Shot</name>
+			<desc>It is a single use adrenaline shot.</desc>
+			<star>41</star>
+			<actmess>You stab your leg with the syringe and gain agility.</actmess>
+			<useCnt>1</useCnt>
+			<actar>0</actar>
+			<effect>a,1,2</effect>
+		</interact>
+	</item>
+% Area 42
+	<area>
+		<upperR>
+			<desc>Medivel Armory</desc>
+			<feats>0,0</feats>
+		</upperR>
+	</area>
+	<item>
+		<interact>
+			<name>Knight Armor</name>
+			<desc>It may be for decoration but it should increase your protection.</desc>
+			<star>42</star>
+			<actmess>You put on the armor and and hope it works.</actmess>
+			<useCnt>2</useCnt>
+			<actar>0</actar>
+			<effect>m,1,2</effect>
+		</interact>
+	</item>
+% Area 43
+	<area>
+		<upperR>
+			<desc>Charred Room</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>A man on fire runs through the room. His skin bubbles and falls away as he screams in agony</rmMess>
+				<act>1</act>
+				<#d>s</#d>
+				<hRoll>5,1,s,1</hRoll>
+					<hMsg>You feel a little hot under the collar but all in all are fine.</hMsg>
+				<mRoll>2,0,s,1</mRoll>
+					<mMsg>You cringe into the corner of the room as the man screams in agony. Lose sanity</mMsg>
+				<lRoll>2,0,s,2</lRoll>
+					<lMsg>You can not look away as the man tries to end the pain of his charring flesh. You lose a bit of your mind.</lMsg>
+			</rmEft>
+		</upperR>
+	</area>
+% Area 44
+	<area>
+		<upperR>
+			<desc>Attic</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>A breeze chills the room. Before you hang three men from frayed ropes. They stare at you from cold, dead eyes. The trio swings then suddenly fall to dust. You begin to choke, you are in the noose.</rmMess>
+				<act>1</act>
+				<#d>m</#d>
+				<hRoll>5,1,s,0</hRoll>
+					<hMsg>You reach up and break the rope. Besides a scratchy voice you are unscathed.</hMsg>
+				<mRoll>5,0,m,1</mRoll>
+					<mMsg>You struggle to break the rope but eventually it breaks under your weight. Lose Might</mMsg>
+				<lRoll>5,0,m,3</lRoll>
+					<lMsg>You hang there until you pass out and the rope breaks while you are unconcious. Take Critical damage.</lMsg>
+			</rmEft>
+		</upperR>
+	</area>
+% Area 45
+	<area>
+		<upperR>
+			<desc>Drawing Room</desc>
+			<feats>0,0</feats>
+			<rmEft>
+				<rmMess>You enter a drawing room and notice a weird contract that says you get unlimited power, jokingly you sign it. A demon appears saying you owe your soul.</rmMess>
+				<act>1</act>
+				<#d>k</#d>
+				<hRoll>5,1,k,1</hRoll>
+					<hMsg>You read the contract and find it is not binding.</hMsg>
+				<mRoll>2,0,s,1</mRoll>
+					<mMsg>You lose your soul and gain a zap of electricity.</mMsg>
+				<lRoll>2,0,k,2</lRoll>
+					<lMsg>The demon takes your soul and some of your wits.</lMsg>
+			</rmEft>
+		</upperR>
+	</area>
+% Area 46
+	<area>
+		<upperR>
+			<desc>Nursery</desc>
+			<feats>0,0</feats>
+			<rmDmg>
+				<act>1</act>
+				<Dmg>0,m,1</Dmg>
+				<rmMess>A creepy Puppet sitting in the corner spring to life and stabs you, it chuckles and then falls still.</rmMess>
+			</rmDmg>
+		</upperR>
+	</area>
+
+
+	<links>
+%known rooms****************************************************
+		<linkset>1,1,1,1</linkset>
+		<linkset>3,1,2,2</linkset>
+		<linkset>-1,2,4,5</linkset>
+		<linkset>-1,-1,4,3</linkset>
+		<linkset>5,5,3,6</linkset>
+		<linkset>-1,-1,5,-1</linkset>
+		<linkset>7,7,7,7</linkset>
+%BEGIN THE RANDOM BASEMENT ROOMS********************************
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+%BEGIN THE RANDOM GROUND ROOMS**********************************
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+%BEGIN THE RANDOM UPPER ROOMS***********************************
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+		<linkset>-1,-1,-1,-1</linkset>
+	</links>
+
+</game>
+
